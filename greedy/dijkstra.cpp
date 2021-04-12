@@ -104,6 +104,8 @@ int main() {
     cin >> V;
     cout << "Enter number of edges: ";
     cin >> E;
+
+    // Store a Graph
     Graph G(V);
     for (int i = 0; i < E; i++) {
         cout << "\nEdge " << i + 1 << "\nEnter source: ";
