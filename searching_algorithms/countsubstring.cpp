@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-// Counting Substrings: In a given text, find the number of substrings that start with an A and end with a B
+// Counting Substrings: In a given text, find the number of substrings that start with an A and end with B
 
 // For a string of size n
 // Substrings start character A can be in any position i where i >=0 and < n-1
@@ -19,38 +19,67 @@ using namespace std;
 //for i <- 0 to n-2 do
 //    if T[i] = A do
 //        for j <-i to n-1 do
-//            If T[j] =B do
+//            If T[j] = B do
 //                count <- count +1
 //return count
 
-void countsubstring1(string text,char startchar, char endchar) {
+int countsubstring1(string text, int n , char startchar, char endchar) {
+
+    // base cases
+    if (n == 1)
+        return 1;
+    if (n <= 0)
+        return 0;
+
     int count = 0; // Number of A's seen
-    int total = 0;
-    cout << total << '.';
+
+    // Count of substrings that starts with an A at a given position i (0 ≤ i<n − 1) in the text is equal to the number of B’s to the right of that position.
+    for (int i = 0; i < n-1; i++) {
+        if (text[i] == startchar) {
+            for(int j = i; j<n ;j++){    // scan to all end char following the startchar
+                if (text[j] == endchar) {
+                    count++;
+                }
+            }
+        }
+    }
+    return count;
 }
 
 
 // optimization
-void countsubstring2(string text, char startchar, char endchar) {
+int countsubstring2(string text, int n , char startchar, char endchar) {
 
-    int count = 0; // Number of A's seen
-    int total = 0;
-    for (int i = 0; i < text.length(); i++) {
-        if (i == startchar) {
-            count += 1;
-        } else if (i == endchar) {
-            total += count;
+    int countA = 0; // Number of A's seen
+    int totalcount = 0;
+
+    cout<< "\n text "<< text;
+    cout<< "\n textsize "<< n;
+    cout<< "\n startchar "<< startchar;
+    cout<< "\n endchar "<< endchar<<"\n";
+
+    for (int i = 0; i < n; i++) {
+        if (text[i] == startchar) {
+            countA ++ ;
+        } else if (text[i] == endchar) {
+            totalcount = totalcount+ countA;
         }
     }
-    cout << total << '.';
+
+    return totalcount;
 }
 
 int main() {
+
+    string text = "CABAAXBYA";
+    int textsize = text.length();
+    char startchar = 'A', endchar= 'B';
+
     cout << "Count substring1 \n";
-    countsubstring1("CABAAXBYA", 'A', 'B');
+    cout<< countsubstring1(text, textsize, startchar, endchar);
 
     cout << "Count substring2 \n ";
-    countsubstring2("CABAAXBYA", 'A', 'B');
+    cout<< countsubstring2(text, textsize, startchar, endchar);
 }
 
 

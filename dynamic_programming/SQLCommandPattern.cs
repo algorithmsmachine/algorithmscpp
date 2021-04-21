@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CPCS_5200_19WQ{
+namespace SQLCommandPattern{
 
 public enum BinaryOperation    {
         Equals,

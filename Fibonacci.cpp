@@ -8,10 +8,12 @@ using namespace std;
 
 //Fibonacci Series using Dynamic Programming
 #include<stdio.h>
-  
-int fib(int n)
+
+// Appriach 1 : Iterative code 
+// Time Complexity of iterative code = O(n)
+// Space Complexity of iterative code = O(1)
+int fib_iterative(int n)
 {
-  /* Declare an array to store Fibonacci numbers. */
   int f[n+1];
   int i;
   
@@ -26,12 +28,34 @@ int fib(int n)
   
   return f[n];
 }
+
+// Approach 2 : Recurssive code ( has bugs )
+
+// Time complexity of recursive code = O(2^n)
+// Space Complexity of recursive code = O(n) (for recursion call stack)
+
+// int fib_recursive(int n)
+// {
+
+//   printf(" n %d", n);
+
+//   if(n <= 1) {
+//     return n;
+//   }
+
+//   return fib_recursive(n-1)+ fib_recursive(n-2);
+// }
   
 int main ()
 {
   int n = 10;
-  printf("%d", fib(n));
+  
+  printf("fib_iterative %d", fib_iterative(n));
   getchar();
+
+  // printf("fib_recursive %d", fib_recursive(n));
+
+  // Here recursive algorithm is a more tough to analyse and inefficient in comparison with the iterative algorithms. 
   return 0;
 }
 
