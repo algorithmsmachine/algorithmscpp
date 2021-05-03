@@ -20,3 +20,10 @@ Features of D&C algos
 - can also be implemented by a non-recursive program that stores the partial sub-problems in some explicit data structure, such as a stack, queue, or priority queue . This is used in breadth first recurssion and branch and bound
 
 Divide by factor 
+
+## Debugging help 
+
+**Issue 1** trigerring gcc protection mechanism to detect buffer overflow errors
+```
+*** stack smashing detected ***: <unknown> terminated
+```
