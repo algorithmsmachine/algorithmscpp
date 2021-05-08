@@ -107,6 +107,8 @@ Optimal size of a block to be jumped / time complexity is O(√ n).
 
 ## Ternary Search
 
+**References**
+- Binary Serach https://en.wikipedia.org/wiki/Binary_search_algorithm#Running_time_and_cache_use 
 
 Sources - https://programmingaltanai.wordpress.com/
 

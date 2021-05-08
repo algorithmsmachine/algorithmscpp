@@ -2,6 +2,9 @@
 // Created by altanai on 09/08/20.
 //
 #include <iostream>
+#include <chrono>
+using namespace std;
+using namespace std::chrono;
 
 /**
  * Algorithm implementation
@@ -31,20 +34,26 @@ int main() {
     int key;
 
     // Input array
-    std::cout << "\nEnter the Array of " << size << " numbers : ";
+    std::cout << "\n Enter the Array of " << size << " numbers : ";
     for (int i = 0; i < size; i++) {
         std::cin >> array[i];
     }
 
-    std::cout << "\nEnter the number to be searched : ";
+    std::cout << "\n Enter the number to be searched : ";
     std::cin >> key;
 
+    auto start = high_resolution_clock::now();
     int index = LinearSearch(array, size, key);
+    auto stop = high_resolution_clock::now();
+
     if (index != -1) {
-        std::cout << "\nNumber found at index : " << index;
+        std::cout << "\n Brute Force Search - Number found at index : " << index;
     } else {
-        std::cout << "\nNot found";
+        std::cout << "\n Not found";
     }
+
+    auto duration = duration_cast<microseconds>(stop - start);
+    cout << "\n duration " << duration.count() << " ms " << endl;
 
     delete[] array;
     return 0;
