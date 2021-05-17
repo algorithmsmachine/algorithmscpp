@@ -7,7 +7,6 @@
 #include <iostream>
 using namespace std;
 
-
 //Constructs a heap from elements of a given array by the bottom-up algorithm
 //Input: An array H [1..n] of orderable items
 //Output: A heap H [1..n]
@@ -37,8 +36,8 @@ void printarray(int A[], int size){
 }
 
 
-// Approach1  :  bottom-up order.
-//  Heapify procedure applied to a node only if its children nodes are heapified
+// approach 1  :  bottom-up order.
+// Heapify procedure applied to a node only if its children nodes are heapified
 // 2(n − log 2 (n + 1))
 void heapify(int arr[], int n, int i){
     int largest = i;
@@ -69,14 +68,66 @@ void heaptopdown(int arr[], int n){
 
 }
 
+// ----------------------- utility function 
+struct node{
+    int data;
+    struct node* left;
+    struct node* right;
+    node(int value){
+        data=value;
+        left=NULL;
+        right=NULL;
+    }
+};
+node* insertarr_bt(int arr[], node* root, int i, int n){
+    if(i<n){
+        root = new node(arr[i]);
+        root->left = insertarr_bt(arr, root->left, 2*i+1, n);
+        root->right = insertarr_bt(arr, root->right, 2*i+2, n);
+    }
+    return root;
+}
+void printBT(const std::string& prefix, const struct node* root, bool isLeft){
+    if( root != nullptr ){
+        std::cout << prefix;
+
+        std::cout << (isLeft ? "├──" : "└──" );
+
+        std::cout << root->data << std::endl;
+        printBT( prefix + (isLeft ? "│   " : "    "), root->left, true);
+        printBT( prefix + (isLeft ? "│   " : "    "), root->right, false);
+    }
+}
+void printBT(const struct node* root){
+    printBT("", root, false);    
+}
 
 int main(){
-    int arr[] = {12,15,19,10,8,16,5};//{2,9,7,6,5,8}; //{3,5,1,7,2,8};
+    int arr[] = {12,15,19,10,8,16,5}; //{2,9,7,6,5,8}; //{3,5,1,7,2,8};
     int arr_size = sizeof(arr)/sizeof(arr[0]);
+
     heapbottomup(arr, arr_size);
     printarray(arr, arr_size);
+
+    int n = sizeof(arr)/sizeof(arr[0]);
+    struct node* root = insertarr_bt(arr, root, 0, n);
+    printBT(root);
+
     return 0;
 }
 
 // g++ HeapBottomUp.cpp -o HeapBottomUp.out 
 // ./HeapBottomUp.out
+
+// Outpupt 
+// 12 15 19 10 8 16 5 
+// 12 15 19 10 8 16 5 
+// 19 15 16 10 8 12 5 
+// 19 15 16 10 8 12 5 
+// └──19
+//     ├──15
+//     │   ├──10
+//     │   └──8
+//     └──16
+//         ├──12
+//         └──5

@@ -1,7 +1,9 @@
-// Insert new node in BT by level order 
+// Insert/ Delete node in BT by level order 
 
 // Note BST has order but BT has no order among elements
-
+//
+// Created by @altanai on 31/03/21.
+//
 #include <iostream>
 #include<queue>
 using namespace std;
@@ -32,7 +34,6 @@ void printBT(const std::string& prefix, const struct node* root, bool isLeft)
         printBT( prefix + (isLeft ? "│   " : "    "), root->right, false);
     }
 }
-
 void printBT(const struct node* root)
 {
     printBT("", root, false);    
@@ -165,21 +166,21 @@ int main(){
     cout << "\n  Before \n";
     printBT(root);
 
-    insert_levelorder(root,11);
-
-    cout << "\n  After \n";
+    int a1=0;
+    insert_levelorder(root,a1);
+    cout << "\n  After inserting " << a1 <<"\n";
     printBT(root);
 
-    delete_levelorder(root,5);
-
-    cout << "\n  After deletion \n";
+    int a2=2;
+    delete_levelorder(root,a2);
+    cout << "\n  After deleting " << a2 <<"\n";
     printBT(root);
 
     return 0;
 }
 
-// g++ insertion_bt.cpp -o insertion_bt.out
-//  ./insertion_bt.out   
+// g++ bt_insert_delete.cpp -o bt_insert_delete.out
+//  ./bt_insert_delete.out   
 
 // Outout: 
 //   Before 

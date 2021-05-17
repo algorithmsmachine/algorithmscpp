@@ -1,4 +1,5 @@
-//
+// Inorder , preorder and post order traversal in BT (binary tree) 
+// 
 // Created by @altanai on 31/03/21.
 //
 
@@ -40,6 +41,26 @@ void postorder(node* currnode){
     cout << currnode->data << " " ;
 }
 
+
+// ----------------------- utility function start
+void printBT(const std::string& prefix, const struct node* root, bool isLeft)
+{
+    if( root != nullptr )
+    {
+        std::cout << prefix;
+
+        std::cout << (isLeft ? "├──" : "└──" );
+
+        std::cout << root->data << std::endl;
+        printBT( prefix + (isLeft ? "│   " : "    "), root->left, true);
+        printBT( prefix + (isLeft ? "│   " : "    "), root->right, false);
+    }
+}
+void printBT(const struct node* root)
+{
+    printBT("", root, false);    
+}
+
 int main() {
 
     struct node* root = new node(1);
@@ -48,6 +69,8 @@ int main() {
     root->left->right = new node(4);
     root->right = new node(5);
     root->right->left = new node(6);
+
+    printBT(root);
 
     cout << "Inorder traversal ";
     inorder(root);
@@ -65,3 +88,14 @@ int main() {
 }
 
 // g++ traversal_binarytree.cpp -o traversal.out 
+//  ./traversal.out
+// output 
+// └──1
+//     ├──2
+//     │   ├──3
+//     │   └──4
+//     └──5
+//         ├──6
+// Inorder traversal 3 2 4 1 6 5 
+// Pre traversal 1 2 3 4 5 6 
+// Post traversal 3 4 2 6 5 1

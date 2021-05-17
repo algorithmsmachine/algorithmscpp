@@ -1,3 +1,6 @@
+//
+// Created by @altanai on 31/03/21.
+//
 #include <iostream>
 #include<queue>
 using namespace std;
@@ -13,7 +16,7 @@ struct node{
     }
 };
 
-//approach1 : iterative level order traversal using queue to find level of a key in BT
+//approach 1 : iterative level order traversal using queue to find level of a key in BT
 int levelordertraversal(node* root, int key){
     int level=1;
 
@@ -38,6 +41,7 @@ int levelordertraversal(node* root, int key){
     }
     return 0;
 }
+
 
 int main() {
     struct node* root = new node(1);

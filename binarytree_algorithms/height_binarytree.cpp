@@ -30,7 +30,7 @@ struct node{
 int height(node *currnode ){
     if(currnode==NULL) return 0;//  Base case: empty tree has a height of 0
     // Single node tree has height of 1 
-    return 1+ max(height(currnode-> left) , height(currnode->right));
+    return 1 + max(height(currnode-> left) , height(currnode->right));
 }
 
 int main() {

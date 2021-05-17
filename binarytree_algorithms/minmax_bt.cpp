@@ -1,3 +1,8 @@
+// Maximum value of a Binary Tree using recussion
+//
+// Created by @altanai on 31/03/21.
+//
+// Note that binary tree is un ordered thus all values need to be traversed to find the max O(n)
 #include<iostream>
 using namespace std;
 

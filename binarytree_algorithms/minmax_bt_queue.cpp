@@ -1,3 +1,8 @@
+// Maximum value of a Binary Tree using Linear (while) queue
+//
+// Created by @altanai on 31/03/21.
+//
+// Note that binary tree is un ordered thus all values need to be traversed to find the max O(n)
 #include<iostream>
 #include<queue>
 using namespace std;
@@ -42,12 +47,12 @@ int max(node* root){
 
 int main(){
 
-    struct node* root =new node(1);
+    struct node* root = new node(1);
     // root->left= new node(2);
     // root->right = new node(3);
     // root->right->right = new node(7);
     // root->right->right->right = new node(3);
-    cout<< "Max in Binary tree " <<max(root);
+    cout<< "Max in Binary tree " << max(root);
 
 }
 
