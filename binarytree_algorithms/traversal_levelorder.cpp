@@ -15,17 +15,16 @@ struct node{
     }
 };
 
-int height(node *currnode ){
-    if(currnode==NULL) return 0;
-    return 1+ max(height(currnode-> left) , height(currnode->right));
-}
-
-
 // Approach2 : iterative level order traversal , print BT from queue
 
 // insert the root and a null element into the queue ( null element acts as a delimiter). 
 // Next pop from the top of the queue and add its left and right nodes to the end of the queue and then print the top of the queue. 
 // Continue this process till the queues become empty. 
+
+int height(node *currnode ){
+    if(currnode==NULL) return 0;
+    return 1+ max(height(currnode-> left) , height(currnode->right));
+}
 
 void printq(queue<node*> q){
     queue<node*> qcopy = q;

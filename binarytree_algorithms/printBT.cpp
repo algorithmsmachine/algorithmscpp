@@ -276,38 +276,38 @@ public:
 };
 
 
-int main() {
-    BinTree<int> bt;
+// int main() {
+//     BinTree<int> bt;
 
-    // Build OP's tree
-    bt.insert(8,5,2,6,10,9,11);
-    cout << "Tree from OP:\n\n";
-    bt.Dump();
-    cout << "\n\n";
+//     // Build OP's tree
+//     bt.insert(8,5,2,6,10,9,11);
+//     cout << "Tree from OP:\n\n";
+//     bt.Dump();
+//     cout << "\n\n";
 
-    bt.clear();
+//     bt.clear();
 
-    // Build a random tree 
-    // This toy tree can't balance, so random
-    // trees often look more like linked lists.
-    // Just keep trying until a nice one shows up.
-    // std::random_device rd;
-    // std::mt19937 rng(rd());
+//     // Build a random tree 
+//     // This toy tree can't balance, so random
+//     // trees often look more like linked lists.
+//     // Just keep trying until a nice one shows up.
+//     // std::random_device rd;
+//     // std::mt19937 rng(rd());
 
-    // int MaxCount=20;
-    // int MaxDepth=5;
-    // const int Min=0, Max=1000;
+//     // int MaxCount=20;
+//     // int MaxDepth=5;
+//     // const int Min=0, Max=1000;
 
-    // std::uniform_int_distribution<int> dist(Min,Max);
+//     // std::uniform_int_distribution<int> dist(Min,Max);
 
-    // while(MaxCount--) {
-    //     bt.insert(dist(rng));
-    //     if(bt.get_max_depth() >= MaxDepth) break;
-    // }
+//     // while(MaxCount--) {
+//     //     bt.insert(dist(rng));
+//     //     if(bt.get_max_depth() >= MaxDepth) break;
+//     // }
 
-    // cout << "Randomly generated tree:\n\n";
-    // bt.Dump();
-}
+//     // cout << "Randomly generated tree:\n\n";
+//     // bt.Dump();
+// }
 
 //  g++ printBT.cpp -o printBT.out
 // ./printBT.out                 

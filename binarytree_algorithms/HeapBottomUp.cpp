@@ -78,6 +78,10 @@ struct node{
         right=NULL;
     }
 };
+
+#include</home/altanai/Documents/algorithms/algorithmscpp/binarytree_algorithms/printBTvertical.h>
+
+
 node* insertarr_bt(int arr[], node* root, int i, int n){
     if(i<n){
         root = new node(arr[i]);
@@ -85,20 +89,6 @@ node* insertarr_bt(int arr[], node* root, int i, int n){
         root->right = insertarr_bt(arr, root->right, 2*i+2, n);
     }
     return root;
-}
-void printBT(const std::string& prefix, const struct node* root, bool isLeft){
-    if( root != nullptr ){
-        std::cout << prefix;
-
-        std::cout << (isLeft ? "├──" : "└──" );
-
-        std::cout << root->data << std::endl;
-        printBT( prefix + (isLeft ? "│   " : "    "), root->left, true);
-        printBT( prefix + (isLeft ? "│   " : "    "), root->right, false);
-    }
-}
-void printBT(const struct node* root){
-    printBT("", root, false);    
 }
 
 int main(){

@@ -110,8 +110,8 @@ int main(){
     cout<< snode->data;
 
     // When the tobe deleted node is a Leaf Node
-    // root = deletebst(root,7);
-    // printBT(root);
+    root = deletebst(root,7);
+    printBT(root);
 
     // When the tobe deleted node has 1 child
 

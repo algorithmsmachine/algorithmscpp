@@ -3,8 +3,8 @@
 // Created by @altanai on 31/03/21.
 //
 
-// step 1 : creta inorder traversal of the tree into temp array O(n)
-// step 2 : sort the data O(nlogn) - heap sort , merge sort or quicksort O(n^2)
+// step 1 : create inorder traversal of the tree into temp array O(n)
+// step 2 : sort the data O(nlogn) - heap sort , merge sort or quicksort O(n^2)  to O(nlogn)
 // Step 3 : again inorder traversal and copy elements to node
 
 #include<iostream>
@@ -22,6 +22,7 @@ struct node{
         right=NULL;
     }
 };
+#include</home/altanai/Documents/algorithms/algorithmscpp/binarytree_algorithms/printBTvertical.h>
 
 void inorderstore(node* root, int temp[], int* i){
     if(root==NULL) return;
@@ -60,23 +61,6 @@ void bttobst(node* root){
     fillbst(temparr,root,&i); // copy sorted values back to tree 
     delete temparr;
 }
-
-// ----------------------- utility function start
-void printBT(const std::string& prefix, const struct node* root, bool isLeft){
-    if( root != nullptr ){
-        std::cout << prefix;
-
-        std::cout << (isLeft ? "├──" : "└──" );
-
-        std::cout << root->data << std::endl;
-        printBT( prefix + (isLeft ? "│   " : "    "), root->left, true);
-        printBT( prefix + (isLeft ? "│   " : "    "), root->right, false);
-    }
-}
-void printBT(const struct node* root){
-    printBT("", root, false);    
-}
-
 
 int main(){
 

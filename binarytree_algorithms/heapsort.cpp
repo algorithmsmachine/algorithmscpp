@@ -51,7 +51,6 @@ void heapsort(int arr[], int n ){
 
 int main(){
     // int arr[]={1,2,3,6,4,7,5};
-
     // int arr[]={2,9,7,6,5,8};
     int arr[]={1, 8, 6, 5, 3, 7, 4};
     

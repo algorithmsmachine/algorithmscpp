@@ -1,4 +1,4 @@
-// Binary tree from array , via level order readings
+// Binary tree from array, via level order readings
 //
 // Created by @altanai on 31/03/21.
 //

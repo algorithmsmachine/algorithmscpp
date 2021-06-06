@@ -13,7 +13,7 @@ using namespace std;
 int findmin(int heap[], int n){
     int minelm = heap[n/2];
     for(int i=1+n/2; i<n;i++){
-        minelm = min(minelm,heap[i]);
+        minelm = min(minelm, heap[i]);
     }
     return minelm;
 }
