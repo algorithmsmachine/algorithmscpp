@@ -51,7 +51,7 @@ void dfs(vector<int>adj[], int V){
 
 void addEdge(vector<int> adj[], int u, int v){
     adj[u].push_back(v);
-    adj[v].push_back(u);
+    adj[v].push_back(u);   // for directed comment this line 
 }
 
 void printGraph(vector<int> adj[],int V){
@@ -83,3 +83,11 @@ int main(){
 
 // g++ dfs_undirected.cpp -o dfs.out
 // ./dfs.out
+
+// Output
+// 0 ——> 1 4 
+// 1 ——> 2 3 4 
+// 2 ——> 3 
+// 3 ——> 4 
+// 4 ——> 
+// 0 1 2 3 4 % 

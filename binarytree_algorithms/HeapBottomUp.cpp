@@ -36,14 +36,13 @@ void printarray(int A[], int size){
 }
 
 
-// approach 1  :  bottom-up order.
+// approach 1 :  bottom-up order.
 // Heapify procedure applied to a node only if its children nodes are heapified
 // 2(n − log 2 (n + 1))
 void heapify(int arr[], int n, int i){
     int largest = i;
     int l = 2*i +1 ;
     int r = 2*i +2 ;
-
     if( l<n && arr[l]>arr[largest]) largest=l;
     if( r<n && arr[r]>arr[largest]) largest=r;
     if(largest !=i ) {

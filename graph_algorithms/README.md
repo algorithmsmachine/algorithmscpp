@@ -20,3 +20,9 @@ some of the other STL containers:
 
 - Vector are good for small scale, all the memory in a vector is always contiguous. However for large scale finidng an elemnt in map takes fewer operations.
 
+
+Todo :
+Cyclic finindg 
+Tolopological soirt 
+bipartite 
+priority queuss 

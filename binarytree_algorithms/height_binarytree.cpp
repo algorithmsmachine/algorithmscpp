@@ -1,12 +1,10 @@
 //
 // Created by @altanai on 31/03/21.
 //
-
-// Heighgt of binary tree / number of levels in binary tree 
+// Height of binary tree / number of levels in binary tree 
 
 // The approach is to calculate the height of the left and right subtree. The height of a subtree rooted at any node will be one more than the maximum height of its left and right subtree. 
 // Recursively apply this property to all tree nodes in a bottom-up manner (postorder fashion) and return the subtree’s maximum height rooted at that node
-
 
 #include <iostream>
 using namespace std;

@@ -30,7 +30,7 @@ bool isBST(struct node* root, int min , int max){
     if(root == NULL) return true;
 
     // not BST if this node violates the min/max constraint  
-    if(root->data <min || root->data > max) return false;
+    if(root->data < min || root->data > max) return false;
 
     // recisively check for iBST on left-subtree and-right subtree 
     return isBST(root->left, INT_MIN, root->data-1) && isBST(root->right, root->data+1, INT_MAX);
