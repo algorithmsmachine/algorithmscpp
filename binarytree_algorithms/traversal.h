@@ -33,6 +33,32 @@ using namespace std;
 //     inorder(root->right, nodes);
 // }
 
+// -------------------- traversal with only print 
+// Inorder is L -> Root -> R
+void inorder(node* currnode){
+    if(currnode ==NULL) return;
+    inorder(currnode->left); 
+    cout << currnode->data << " " ;
+    inorder(currnode->right);
+}
+
+// Preorder is Root -> L -> R
+void preorder(node* currnode){
+    if(currnode ==NULL) return;
+    cout << currnode->data << " " ;
+    preorder(currnode->left); 
+    preorder(currnode->right);
+}
+
+// Postorder is  L -> R -> Root
+void postorder(node* currnode){
+    if(currnode ==NULL) return;
+    postorder(currnode->left); 
+    postorder(currnode->right);
+    cout << currnode->data << " " ;
+}
+
+// -------------------- over loading the traversal with arr 
 // Inorder is L -> Root -> R
 void inorder(node* root, int i, int orderarr[]){
     if(root ==NULL) return ;
@@ -42,7 +68,7 @@ void inorder(node* root, int i, int orderarr[]){
 }
 
 // Preorder is Root -> L -> R
-int preorder(node* root, int i , int orderarr[]){
+void preorder(node* root, int i , int orderarr[]){
     if(root ==NULL) return;
     cout << root->data << " " ; orderarr[i]=root->data; i++;
     preorder(root->left ,i, orderarr); 
@@ -50,7 +76,7 @@ int preorder(node* root, int i , int orderarr[]){
 }
 
 // Postorder is  L -> R -> Root
-int postorder(node* root, int i , int orderarr[]){
+void postorder(node* root, int i , int orderarr[]){
     if(root ==NULL) return;
     postorder(root->left,i, orderarr); 
     postorder(root->right,i, orderarr); 

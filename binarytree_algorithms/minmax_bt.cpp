@@ -1,4 +1,4 @@
-// Maximum value of a Binary Tree using recussion
+// Maximum value of a Binary Tree using recurssion
 //
 // Created by @altanai on 31/03/21.
 //

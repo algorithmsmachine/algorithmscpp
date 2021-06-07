@@ -10,6 +10,8 @@
 using namespace std;
 
 // 1. Linear Approach 
+// best case : arr is sorted in increasing order run once for min and once for max hence 2(n-1)
+// worst case : arr is sorted in decreasing order or all eeleemnst are equal 3(n-1)
 
 int findMinimum(int a[], int n)
 {
@@ -40,9 +42,8 @@ int findMaximum(int a[], int n)
 //     if(max < arrr)
 //         max = arrr;
 // }
-//Finds the values of the smallest and largest elements in a given subarray using divide and conquer
+// Finds the values of the smallest and largest elements in a given subarray using divide and conquer
 // void minmax(int arr[], int l, int r, int &min, int &max){
-
 //     if (r == l){ // if arr contains only 1 element 
 //         compareminmax(arr[l],arr[r],min, max);
 //         return;
@@ -64,8 +65,17 @@ int findMaximum(int a[], int n)
 // }
 
 
+// Approach 3 : find min and max in array using pairs ( divide ad conquer )
+// handle cases of even and odd number seprately 
+// minimize the number of comparisions 
 
-// 3. Appriach using optimized divide and conquer
+
+
+
+// Approach 4 : using optimized divide and conquer
+// Tournament Method
+// D&C like merge sort and recusively finidnig max and min in the parts .
+// find max in min in those smaller parts and 
 
 //Algorithm MinMax (A[l..r], minval, maxval)
 //Finds the values of the smallest and largest elements in a given subarray
@@ -85,6 +95,7 @@ int findMaximum(int a[], int n)
 //         minval ← minval2
 //     if maxval2 > maxval
 //         maxval ← maxval2
+// O(n)
 int* minmax(int arr[], int l, int r){
 
     //C++ does not allow to return an entire array as an argument to a function. However, 
@@ -93,11 +104,11 @@ int* minmax(int arr[], int l, int r){
     int* mmarr = new int[2];
     int min,max;
 
-    if (r == l){ // if arr contains only 1 element 
+    if (r == l){                // if arr contains only 1 element 
         min = arr[r];
         max = arr[r];
 
-    }else if ((r-l) == 1){ // if arr contains 2 elements
+    }else if ((r-l) == 1){      // if arr contains 2 elements
         if(arr[l] <= arr[r]){
             max = arr[r];
             min = arr[l];
@@ -106,14 +117,12 @@ int* minmax(int arr[], int l, int r){
             min = arr[r];
         }
 
-    }else {//r − l > 1  if arr contains more than 1 elements
+    }else {                     //r − l > 1  if arr contains > than 1 elements
 
         int m = floor((l + r)/2);
-        int *arr1 = minmax(arr, l, m); // recur for the left subarray
-        int *arr2 = minmax(arr, m+1, r); // recur for the right / 2nd subarray
-
-
-        cout << "\n Compare arr1 " << arr1[0] << " and  "<< arr1[1] << " against arr2  "<< arr2[0] << " and  " << arr2[1];
+        int *arr1 = minmax(arr, l, m);      // recur for the left subarray
+        int *arr2 = minmax(arr, m+1, r);    // recur for the right / 2nd subarray
+        // cout << "\n Compare arr1 " << arr1[0] << " and  "<< arr1[1] << " against arr2  "<< arr2[0] << " and  " << arr2[1];
         if ( arr1[1] > arr2[1] )
             max = arr1[1];
         else

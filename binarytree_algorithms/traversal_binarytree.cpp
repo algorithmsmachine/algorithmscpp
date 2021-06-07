@@ -56,8 +56,7 @@ void printBT(const std::string& prefix, const struct node* root, bool isLeft)
         printBT( prefix + (isLeft ? "│   " : "    "), root->right, false);
     }
 }
-void printBT(const struct node* root)
-{
+void printBT(const struct node* root){
     printBT("", root, false);    
 }
 

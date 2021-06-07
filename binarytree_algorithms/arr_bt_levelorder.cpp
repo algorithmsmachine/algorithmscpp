@@ -33,7 +33,7 @@ void inorder(struct node* root){
     inorder(root->right);
 }
 
-// ----------------------- utility function start
+// ----------------------- utility function 
 void printBT(const std::string& prefix, const struct node* root, bool isLeft){
     if( root != nullptr ){
         std::cout << prefix;

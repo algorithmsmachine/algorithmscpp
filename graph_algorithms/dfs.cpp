@@ -4,14 +4,11 @@
 // Created by @altanai on 31/03/21.
 //
 // Graph represendted by STL
-
 // DFS - depth-first search traversal 
-
 // Input : Graph G = V , E
 // Output : Graph G with its vertices marked with consecutive integers in order of encoounter
 
 // Algo : 
-
 // all vetex unvisited 1 
 // counter <-0
 // for each v in V do 

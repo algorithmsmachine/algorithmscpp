@@ -50,15 +50,14 @@ void fillbst(int temp[],struct node*root,int *i){
 }
 
 void bttobst(node* root){
-    if(root==NULL) return; //empty tree
-    int n = countnodes(root);
-    cout<< " Number of node "<< n << endl;
-    int* temparr=new int[n];
-    int i=0;
-    inorderstore(root,temparr,&i);
-    qsort(temparr,n,sizeof(temparr[0]),compare); // qsort libbary function
+    if(root==NULL) return;            //empty tree
+    int n = countnodes(root);         // 1. count nodes 
+    int* temparr = new int[n];        // 2. Make temp array and store innorder traversal
+    int i = 0;
+    inorderstore(root, temparr, &i);
+    qsort(temparr,n,sizeof(temparr[0]),compare); // 3. qsort libary function
     i=0;
-    fillbst(temparr,root,&i); // copy sorted values back to tree 
+    fillbst(temparr,root,&i);         // 4. copy sorted values back to tree 
     delete temparr;
 }
 

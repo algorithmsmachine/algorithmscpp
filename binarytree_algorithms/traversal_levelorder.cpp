@@ -42,8 +42,8 @@ void levelordertraversal(node* root){
 
     if(root == NULL ) return;
 
-    queue<node*> q; // empty queue
-    node* curr; // node to store front element 
+    queue<node*> q;     // empty queue
+    node* curr;         // node to store front element 
 
     q.push(root);
     q.push(NULL);

@@ -10,12 +10,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// in  amax heap , min will be in the leaf nodes
 int findmin(int heap[], int n){
-    int minelm = heap[n/2];
+    int mm = heap[n/2];
     for(int i=1+n/2; i<n;i++){
-        minelm = min(minelm, heap[i]);
+        mm = min(mm, heap[i]);
     }
-    return minelm;
+    return mm;
 }
 
 int main(){

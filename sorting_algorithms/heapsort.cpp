@@ -7,35 +7,19 @@
 #include<iostream>
 using namespace std;
 
-/*
- * get the parent of this node
- */
-int parent(int i)
-{
+int parent(int i){
     return (i-1)/2;
 }
 
-/*
- * get the left child
- */
-int left(int i)
-{
+int left(int i){
     return 2*i+1;
 }
 
-/*
- * get the right child
- */
-int right(int i)
-{
+int right(int i){
     return 2*i+2;
 }
 
-/*
- * construct a sub-tree whose root is node i
- */
-void maxHeapify(int A[], int n, int i)
-{
+void maxHeapify(int A[], int n, int i){
     int l = left(i);
     int r = right(i);
     int largest(0);
@@ -55,8 +39,7 @@ void maxHeapify(int A[], int n, int i)
 /*
  * build the heap
  */
-void buildMaxHeap(int A[], int n)
-{
+void buildMaxHeap(int A[], int n){
     for(int i = n/2-1;i >= 0;i--)
         maxHeapify(A, n, i);
 
@@ -83,8 +66,7 @@ void print(int A[], int n)
 
 }
 
-int main()
-{
+int main(){
     int A[10] = {16,14,10,8,7,9,3,2,4,1};
     heapsort(A, 10);
     print(A, 10);

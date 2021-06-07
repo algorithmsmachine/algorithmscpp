@@ -48,7 +48,7 @@ int max(node* root){
 int main(){
 
     struct node* root = new node(1);
-    // root->left= new node(2);
+    // root->left = new node(2);
     // root->right = new node(3);
     // root->right->right = new node(7);
     // root->right->right->right = new node(3);

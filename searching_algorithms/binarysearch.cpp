@@ -31,7 +31,7 @@ using namespace std::chrono;
 //     return -1; // not found
 // }
 
-// approach 2 : recurssive binary serach 
+// approach 2 : recursive binary serach 
 int binarysearch(int arr[], int l ,int r, int T){
 
     if(l<=r){
@@ -47,8 +47,7 @@ int binarysearch(int arr[], int l ,int r, int T){
         }
     }else{
         return -1;  
-    }    
-
+    }
 }
 
 

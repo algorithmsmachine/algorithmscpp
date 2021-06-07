@@ -5,14 +5,11 @@
 using namespace std;
 using namespace std::chrono;
 
-// UTILITY FUNCTIONS
 // Function to print an array
-void printArray(int A[], int size)
-{
+void printArray(int A[], int size){
     for (int i = 0; i < size; i++)
         cout << A[i] << " ";
 }
-
 
 void selectionsort(int arr[], int n){
     for ( int i =0 ; i<=n-2 ; i++){

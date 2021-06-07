@@ -32,41 +32,29 @@ void printArray(int arr[], int n)
 // approach 1 : start from front
 // void binaryStrings(int arr[], int n , int i)
 // {
-
 //     if (i == n) {  
 //         printArray(arr, n);
 //         return;
 //     }
-
 //     arr[i] = 0;
 //     binaryStrings(arr, n, i + 1);
-
 //     arr[i] = 1;
 //     binaryStrings(arr, n, i + 1);
 // }
 
-
-
 // approach 2 : start from rear
-void binaryStrings(int arr[], int n, int i)
-{
-
+void binaryStrings(int arr[], int n, int i){
     if (i==0) {  
         printArray(arr, n);
         return;
     }
-
     arr[i-1] = 0;
     binaryStrings(arr, n, i-1);
-
     arr[i-1] = 1;
     binaryStrings(arr, n, i-1);
 }
 
-
-// Driver Code
-int main()
-{
+int main(){
     int n = 3;
     int *arr = new int[4];
     // approach 1

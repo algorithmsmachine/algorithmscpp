@@ -1,5 +1,4 @@
 // Quick Sort
-
 // Divide and Conquer algorithm 
 
 //partitions the given array around the picked pivot
@@ -15,13 +14,11 @@
 using namespace std;
 using namespace std::chrono;
 
-// UTILITY FUNCTIONS
-// print an array
 void printArray(int A[], int n){
     for (int i = 0; i < n; i++)
         cout << A[i] << " ";
 }
-// swap two elements 
+
 void swap(int* a, int* b) { 
     int t = *a; 
     *a = *b; 
@@ -34,7 +31,6 @@ void swap(int* a, int* b) {
 // k is the number of elements which are smaller than pivot. 
 // Worst Case θ(n^2)
 // Best Case θ(nlogn)
-
 int partition(int arr[], int l , int r){
     int p = arr[r]; // right most pivot
     int i = l-1; // index of smaller element which is right posistion of pivot so far 
@@ -49,7 +45,7 @@ int partition(int arr[], int l , int r){
 }
 
 // Input: A subarray A[l..r] of A[0..n-1], defined by its left and right indices l and r
-// Output:Subarray A[l..r] sorted in nondecreasing order
+// Output: Subarray A[l..r] sorted in nondecreasing order
 void quicksort(int arr[], int l, int r){
     if(l<r){
         int s = partition(arr, l, r); // split along partition

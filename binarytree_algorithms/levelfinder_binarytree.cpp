@@ -17,7 +17,7 @@ struct node{
 };
 
 //approach 1 : iterative level order traversal using queue to find level of a key in BT
-int levelordertraversal(node* root, int key){
+int levelfinder(node* root, int key){
     int level=1;
 
     queue<node*> q; // empty queue
@@ -51,8 +51,8 @@ int main() {
     root->right = new node(5);
     root->right->left = new node(6);
 
-    int key = 1;
-    cout << "BST level finder for key " << levelordertraversal(root, key) << endl;
+    int key = 6;
+    cout << "BST level finder for key " << levelfinder(root, key) << endl;
     return 0;
 }
 

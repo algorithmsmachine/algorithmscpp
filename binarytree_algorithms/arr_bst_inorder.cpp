@@ -2,7 +2,7 @@
 #include</home/altanai/Documents/algorithms/algorithmscpp/binarytree_algorithms/printBT.cpp>
 #include <queue>
 using namespace std;
-// #include</home/altanai/Documents/algorithms/algorithmscpp/binarytree_algorithms/traversal.h>
+
 // #include</home/altanai/Documents/algorithms/algorithmscpp/binarytree_algorithms/delete_insert.h>
 
 typedef struct node{
@@ -15,6 +15,8 @@ typedef struct node{
         right = NULL;
     }
 } node;
+
+#include</home/altanai/Documents/algorithms/algorithmscpp/binarytree_algorithms/traversal.h>
 
 // ----------------------- utility function insertbst and deletebst
 struct node* insertbst(struct node* root, int val){
@@ -32,7 +34,6 @@ struct node* minValueNode(struct node* node){
         current = current->left;
     return current;
 }
-
 struct node* deletebst(struct node* root, int key){
     if (root == NULL) return root;
  
@@ -70,45 +71,22 @@ void insert(node ** root, int val){
     else if((*root)->data > val)
         insert(&((*root)->left), val);
 }
-node* getBST(int * arr, int n){
+node* getBST(int *arr, int n){
     node * root = NULL;
     for(int i = 0; i < n; i++)
         insert(&root, arr[i]);
-        // insertbst(root,arr[i]);
     return root;
 }
-void inorder(node * root, int i, int arr[]){
-    if(root && root->left) inorder(root->left, i++, arr);
-    if(root){
-         std::cout<<root->data<<" , ";
-         arr[i]=root->data;
-    }
-    if(root && root->right) inorder(root->right, i++, arr);
-}
+// void inorderbst(node * root, int i, int arr[]){
+//     if(root && root->left) inorderbst(root->left, i++, arr);
+//     if(root){
+//          std::cout<<root->data<<" , ";
+//          arr[i]=root->data;
+//     }
+//     if(root && root->right) inorderbst(root->right, i++, arr);
+// }
 
 
-// ----------------------- utility function traversal
-// Inorder is L -> Root -> R
-void inorder(node* root){
-    if(root ==NULL) return ;
-    inorder(root->left); 
-    cout << root->data << " " ;
-    inorder(root->right);
-}
-// Preorder is Root -> L -> R
-void preorder(node* root){
-    if(root ==NULL) return;
-    cout << root->data << " " ;
-    preorder(root->left ); 
-    preorder(root->right); 
-}
-// Postorder is  L -> R -> Root
-void postorder(node* root){
-    if(root ==NULL) return;
-    postorder(root->left); 
-    postorder(root->right); 
-    cout << root->data << " " ;
-}
 
 // ----------------------- utility function printBT
 void printBT(const std::string& prefix, const struct node* root, bool isLeft){
@@ -128,43 +106,6 @@ void printBT(const struct node* root)
     printBT("", root, false);    
 }
 
-// ----------------------- utility function level order traversal
-int height(node *root ){
-    if(root==NULL) return 0;
-    return 1+ max(height(root-> left) , height(root->right));
-}
-void printq(queue<node*> q){
-    queue<node*> qcopy = q;
-    cout<<"\n print Queue ";
-    while(!qcopy.empty()){
-        cout << " \t " << qcopy.front();
-        qcopy.pop();
-    }
-    cout << '\n';
-}
-void levelordertraversal(node* root, int i , int orderarr[]){
-    int h = height(root);
-    cout << " height "<< h << endl;
-    if(root == NULL ) return;
-    queue<node*> q; // empty queue
-    node* curr; // node to store front element 
-    q.push(root);
-    q.push(NULL);
-    while(q.size()>1){
-        curr = q.front();
-        q.pop();
-
-        if(curr ==NULL){
-            q.push(NULL);
-            cout << "\n";
-        }else{
-            if(curr->left) q.push(curr->left);
-            if(curr->right) q.push(curr->right);
-            cout << curr->data << " " ; orderarr[i]=curr->data; i++;
-        }
-    }
-    printq(q);
-}
 
 
 // ----------------------- main
@@ -197,7 +138,6 @@ int main()
 
 
     // int arr2[n];
-    // // int rarr2[n];
     root  = deletebst(root, 3);
     root  = deletebst(root, 12);
     root  = deletebst(root, 10);
@@ -215,8 +155,6 @@ int main()
     bt2.Dump();
     cout << "\n\n";
     bt2.clear();
-
-    
 
     return 0;
 }

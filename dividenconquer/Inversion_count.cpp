@@ -4,6 +4,13 @@
 #include <math.h>
 using namespace std;
 
+// print an array
+void printArray(int A[], int size)
+{
+    for (int i = 0; i < size; i++)
+        cout << A[i] << " ";
+}
+
 
 // Approach 1 : Count inversions linearly 
 // Time Complexity: O(n^2)
@@ -20,17 +27,8 @@ int countinversion_linear(int arr[], int n){
     return count;
 }
 
-
-// UTILITY FUNCTIONS to print an array
-void printArray(int A[], int size)
-{
-    for (int i = 0; i < size; i++)
-        cout << A[i] << " ";
-}
-
 // Approach 2 : Count inversions using merge Sort 
 // Time Complexity : O(nlog n)
-
 int countInversions(int arr[], int l, int m, int r) {
     int ci=0;
     // Create 2 temporary array

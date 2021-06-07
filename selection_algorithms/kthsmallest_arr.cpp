@@ -6,5 +6,5 @@
 // – Efficiency (if sorted by mergesort): Θ(nlogn)
 
 
-//approach 2 
+// Approach 2 
 // decrease-and- conquer

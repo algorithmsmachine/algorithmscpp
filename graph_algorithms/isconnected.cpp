@@ -97,23 +97,6 @@ bool Graph::isConnected() {
     return true;
 }
 
-void printGraph(Graph t) {
-
-    map < int, Vertex * > vertices = t.getVertices();
-
-    for (map<int, Vertex *>::iterator it = vertices.begin(); it != vertices.end(); ++it) {
-        cout << it->first << ": ";
-        vector < Edge * > edges = it->second->getEdges();
-        for (vector<Edge *>::iterator jit = edges.begin(); jit != edges.end(); ++jit) {
-            int l1 = (*jit)->getV1()->getLabel();
-            int l2 = (*jit)->getV2()->getLabel();
-            if (l1 != it->first) { cout << l1 << ", "; }
-            if (l2 != it->first) { cout << l2 << ", "; }
-        }
-        cout << endl;
-    }
-}
-
 int main() {
     Graph g(4);
     g.addEdge(0, 1);

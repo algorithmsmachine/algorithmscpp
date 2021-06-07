@@ -83,16 +83,12 @@ void mergeSort(int arr[],int l, int r){
     merge(arr,l,m,r);
 }
 
-// UTILITY FUNCTIONS to print an array
-void printArray(int A[], int size)
-{
+void printArray(int A[], int size){
     for (int i = 0; i < size; i++)
         cout << A[i] << " ";
 }
 
-// Driver code
-int main()
-{
+int main(){
     // int arr[] = {3,5,1,7,2,8};
     // int arr[] = { 23,566,243,78,123,4354,354,13,535,35,53,45345,35,234445,3,67,867,432,324,4,34,53,5};
     int arr[] = {5,7,3,1,5,6,3,5,1,8,9,3,4,5,6,7,2,3,4,5,2,3,4,8,9,4,5,6,7,4,5,6,3,4,5,6,7,8,9,0,3,4,5,6,3,5,1,7,3,8,4,2,7,6,5,3,1,8,9,0,3,4,5,6,7,8,9,3,4,5,6,7,2,3,4,5,2,3,4,8,9,4,5,6,7,4,5,6,3,4,5,6,7,8,9,0,3,4,5,6};

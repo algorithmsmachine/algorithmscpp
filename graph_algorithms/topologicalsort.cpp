@@ -68,3 +68,16 @@ int main(){
 
     return 0 ;
 }
+
+
+//  g++ topologicalsort.cpp -o  topologicalsort.out
+//  ./topologicalsort.out 
+
+// Output
+// 0 ——> 
+// 1 ——> 
+// 2 ——> 3 
+// 3 ——> 1 
+// 4 ——> 0 1 
+// 5 ——> 0 2 
+// 5 4 2 3 1 0 %  
