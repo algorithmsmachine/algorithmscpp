@@ -51,7 +51,7 @@ void inorder(node* temp){
 }
 
 // ----------------------- 
-
+// Insert in level order 
 // iterative level order traversal in BT of the given tree using queue to find a node with a null child
 node* insert_levelorder(node* root, int newdata){
 

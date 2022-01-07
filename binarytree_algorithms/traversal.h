@@ -33,7 +33,7 @@ using namespace std;
 //     inorder(root->right, nodes);
 // }
 
-// -------------------- traversal with only print 
+// --------------------  DFS : traversal with only print 
 // Inorder is L -> Root -> R
 void inorder(node* currnode){
     if(currnode ==NULL) return;
@@ -99,17 +99,15 @@ void printq(queue<node*> q){
     cout << '\n';
 }
 
+// --------------------  BFSbinary : traversal with only print 
 void levelordertraversal(node* root, int i , int orderarr[]){
     int h = height(root);
     cout << " height "<< h << endl;
-
     if(root == NULL ) return;
-
     queue<node*> q; // empty queue
     node* curr; // node to store front element 
-
     q.push(root);
-    q.push(NULL);
+    q.push(NULL);  // delimiter
 
     while(q.size()>1){
         curr = q.front();

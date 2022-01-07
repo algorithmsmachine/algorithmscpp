@@ -54,6 +54,51 @@ void addEdge(vector<int> adj[],int u, int v){
     adj[u].push_back(v);
 }
 
+
+// cycle check in BFS 
+// bool BFS(vector<int> &graph, int u, int N)
+// {
+//     // to keep track of whether a vertex is discovered or not
+//     vector<bool> visisted(N);
+ 
+//     // mark the source vertex as discovered
+//     visisted[u] = true;
+//     queue<node> q;
+//     q.push({src, -1});
+ 
+//     // loop till queue is empty
+//     while (!q.empty())
+//     {
+//         // dequeue front node and print it
+//         Node node = q.front();
+//         q.pop();
+ 
+//         // do for every edge `v —> u`
+//         for (int u: graph.adjList[node.v])
+//         {
+//             if (!discovered[u])
+//             {
+//                 // mark it as discovered
+//                 discovered[u] = true;
+ 
+//                 // construct the queue node containing info
+//                 // about vertex and enqueue it
+//                 q.push({ u, node.v });
+//             }
+ 
+//             // `u` is discovered, and `u` is not a parent
+//             else if (u != node.parent)
+//             {
+//                 // we found a cross-edge, i.e., the cycle is found
+//                 return true;
+//             }
+//         }
+//     }
+ 
+//     // no cross-edges were found in the graph
+//     return false;
+// }
+
 int main(){
     //Cyclic
     int V= 4;

@@ -31,9 +31,8 @@ using namespace std;
 void bfstraversal(int u, vector<int> adj[],vector<bool> &visited){
     queue<int> q;
     q.push(u);
-    visited[0]=true;
+    visited[u]=true;
 
-    // list<int>::iterator i;
     while(!q.empty()){
         int s=q.front();
         cout<< s << " " ;
@@ -51,7 +50,8 @@ void bfstraversal(int u, vector<int> adj[],vector<bool> &visited){
 void bfs(vector<int>adj[], int V){
     queue<int> q;
     vector<bool> visited(V,false);
-    for(int i=0;i<=V;i++) visited[i]=false;
+    for(int i=0;i<=V;i++) 
+        visited[i]=false;
 
     for (int i = 0; i < V; i++) {
         if (!visited[i])

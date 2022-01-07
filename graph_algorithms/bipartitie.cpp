@@ -18,7 +18,6 @@ bool isbipartite(vector<int> adj[], int V, int s){
     vector<int> color(V,-1); // every node uncolored 
 
     color[s]=0; // color starting node as blue
-
     queue<int> q;
     q.push(s);
 

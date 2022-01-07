@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+// ISO morphic /  idenical trees  
+
 struct node{
     int data;
     struct node* left;
@@ -20,6 +22,26 @@ bool isidentical(struct node * root1 , struct node * root2){
     return isidentical(root1->left,root2->left) && isidentical(root1->right, root2->right);
 }
 
+// Mirrorrs the tree 
+void mirrorTree(struct node* root){
+    if( root ==NULL) return;
+    struct node* temp;
+    mirrorTree(root->left);
+    mirrorTree(root->right);
+    temp = root->left;          // swap(node->left, node->right);
+    root->left = root->right;
+    root->right = temp;                        
+}
+
+void printTree(struct node* node) {
+   if (node == NULL) {
+      return;
+   }
+   printTree(node->left);
+   cout << node->data << " ";
+   printTree(node->right);
+}
+
 int main(){
     struct node* root1 = new node(10);
     root1->left = new node(30);
@@ -31,4 +53,9 @@ int main(){
 
     cout << isidentical(root1,root2);
 
+    cout << "\n orgnal tree "<< endl;
+    printTree(root1); 
+    mirrorTree(root1);
+    cout << "\n mirror of tree " <<endl;
+    printTree(root1);
 }

@@ -7,23 +7,17 @@
 // 11
 
 // The approach would use permutation using backtracking
-
 // Permutation is an ordered combination 
 // P( n ,r) = n!.(n-r)!
-
 // Combination is selection of items from a collection, such that the order of selection does not matter. 
 // C(n,r) = n!/(r!.(n-r)!)
+
 // #include <bits/stdc++.h>
-
-
 #include<iostream>
 #include<stdlib.h>
-
 using namespace std;
 
-
-void printArray(int arr[], int n)
-{
+void printArray(int arr[], int n){
     for (int i = 0; i < n; i++) 
         cout << arr[i] << " ";
     cout << endl;
@@ -54,6 +48,36 @@ void binaryStrings(int arr[], int n, int i){
     binaryStrings(arr, n, i-1);
 }
 
+
+// Dragon Curve 
+// infinite binary sequence. 
+// We will start with 1, then add 1 and 0, alternatively after each element of the preceding term.
+// Term 1 : 1
+// Term 2 : 110
+// Term 3 : 1101100
+// Term 4 : 110110011100100
+//https://mathworld.wolfram.com/DragonCurve.html
+string dragoncurve(int n){
+
+    string term = "1";
+    for (int i = 2; i <= n; i++) {
+        string temp = "1";
+        char prev = '1', zero = '0', one = '1';
+        for (int j = 0; j < term.length(); j++) {
+            temp += term[j]; //take character from original string
+            if (prev == '0') {
+                temp += one;
+                prev = one;
+            } else {
+                temp += zero;
+                prev = zero;
+            }
+        }
+        term = temp;
+   }
+   return term;
+}
+
 int main(){
     int n = 3;
     int *arr = new int[4];
@@ -63,6 +87,10 @@ int main(){
     // approach 2
     binaryStrings(arr, n , n);
 
+    cout << dragoncurve(1)<< endl;
+    cout << dragoncurve(2)<< endl;
+    cout << dragoncurve(3)<< endl;
+    cout << dragoncurve(4)<< endl;
     return 0;
 }
 
